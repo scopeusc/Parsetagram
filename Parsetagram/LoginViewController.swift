@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: tfUsername.text!, password: tfPassword.text!) { (user, error) -> Void in
             if user != nil {
                 print("successful login!")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             
         }
@@ -44,6 +45,7 @@ class LoginViewController: UIViewController {
             
                 if succeeded {
                     print("yay success")
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 } else {
                     print(error.debugDescription)
                     //if error.code == 202 {
