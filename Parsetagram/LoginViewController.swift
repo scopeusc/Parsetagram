@@ -10,12 +10,17 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController {
-
+    let font = UIFont(name: "HelveticaNeue-UltraLight", size: 20)
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfUsername: UITextField!
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnSignUp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfPassword.font = self.font
+        tfUsername.font = self.font
 
+        
         // Do any additional setup after loading the view.
     }
 
@@ -30,6 +35,7 @@ class LoginViewController: UIViewController {
             if user != nil {
                 print("successful login!")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                
             }
             
         }

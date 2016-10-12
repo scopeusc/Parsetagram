@@ -23,6 +23,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://hidden-garden-54440.herokuapp.com/parse"
             })
         )
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeNavController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
+        let loginNavController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+      
+        if PFUser.current() != nil {
+            print("logged in ")
+            window?.rootViewController = homeNavController
+            window?.makeKeyAndVisible()
+        } else {
+            print("not logged in")
+            window?.rootViewController = loginNavController
+            window?.makeKeyAndVisible()
+        }
+        
+        
         // Override point for customization after application launch.
         return true
     }

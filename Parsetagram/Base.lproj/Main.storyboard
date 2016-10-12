@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parsetagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginNavigationController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parsetagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6xr-eC-7o1">
-                                <frame key="frameInset" minX="68" minY="123" width="238" height="30"/>
+                                <frame key="frameInset" minX="68" minY="185" width="238" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -54,6 +54,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="btnLogin" destination="3om-sd-EA9" id="M42-xg-19I"/>
+                        <outlet property="btnSignUp" destination="GdK-NK-abU" id="CAX-Uw-cQg"/>
                         <outlet property="tfPassword" destination="MKt-dy-LM0" id="9V3-Ht-YlL"/>
                         <outlet property="tfUsername" destination="6xr-eC-7o1" id="dcy-G3-QrR"/>
                         <segue destination="rWm-Vi-QrR" kind="presentation" identifier="loginSegue" id="7Aa-5N-dcq"/>
@@ -63,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-60" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="gOu-es-RC3">
             <objects>
-                <viewController id="rWm-Vi-QrR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeNavigationController" id="rWm-Vi-QrR" customClass="HomeViewController" customModule="Parsetagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yCH-9W-uxY"/>
                         <viewControllerLayoutGuide type="bottom" id="VaT-Um-b5N"/>
@@ -74,12 +76,43 @@
                     <view key="view" contentMode="scaleToFill" id="OMa-k2-V5X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-Am-XDN">
+                                <frame key="frameInset" minX="166" minY="233" width="42" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgc-q2-Pv3">
+                                <frame key="frameInset" minX="122" minY="407" width="130" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="Vro-6K-TUg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-jg-Xqx">
+                                <frame key="frameInset" minX="122" minY="617" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <action selector="onTakePicture:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="HOo-nY-J4p"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="btnLogout" destination="dgc-q2-Pv3" id="DBr-eB-UGU"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="bij-9R-z8H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMx-TC-u7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="37"/>
+            <point key="canvasLocation" x="701.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>
