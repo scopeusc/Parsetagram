@@ -35,6 +35,12 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             print("there's no camera fuck")
         }
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        self.present(vc, animated: true, completion: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -15,11 +15,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tfPassword.font = self.font
         tfUsername.font = self.font
-
+        logo.image = UIImage(named: "CameraIcon")
+        btnLogin.titleLabel!.font = self.font
+        btnSignUp.titleLabel!.font = self.font
+        lblTitle.font = UIFont(name: "Zapfino", size: 36)
         
         // Do any additional setup after loading the view.
     }
@@ -40,9 +46,7 @@ class LoginViewController: UIViewController {
             
         }
     }
-    
-
-    @IBAction func onSignUp(_ sender: AnyObject) {
+        @IBAction func onSignUp(_ sender: AnyObject) {
         let newUser = PFUser()
         newUser.username = tfUsername.text
         newUser.password = tfPassword.text
