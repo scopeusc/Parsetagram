@@ -10,13 +10,13 @@ import Parse
 import UIKit
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
+    let btnFont = UIFont(name: "HelveticaNeue-UltraLight", size: 20)
     let vc = UIImagePickerController()
-    @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var btnLogout: UIButton!
-    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var btnSelectPhoto: UIButton!
+    @IBOutlet weak var btnTakePhoto: UIButton!
     @IBAction func onLogout(_ sender: AnyObject) {
         PFUser.logOutInBackground { (error) in
             // PFUser.currentUser() will now be nil
@@ -27,7 +27,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         vc.delegate = self;
-        
+        btnLogout.titleLabel!.font = self.btnFont
+        btnSelectPhoto.titleLabel!.font = self.btnFont
+        btnTakePhoto.titleLabel!.font = self.btnFont
+        lblTitle.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -44,6 +47,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         vc.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         //present(vc, animated: true, completion: nil)
         self.present(vc, animated: true, completion: nil)
+        
     }
     
     @IBAction func takePhoto(_ sender: AnyObject) {
@@ -72,16 +76,15 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             completion: nil)
     }
     
-    
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        print("picking image: ")
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        print("WHY")
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
         }
-        
         dismiss(animated: true, completion: nil)
     }
+   
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print("cancel")

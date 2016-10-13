@@ -94,23 +94,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-Am-XDN">
-                                <frame key="frameInset" minX="122" minY="233" width="130" height="68"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-Am-XDN">
+                                <frame key="frameInset" minX="122" minY="27" width="130" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgc-q2-Pv3">
-                                <frame key="frameInset" minX="122" minY="407" width="130" height="123"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-jg-Xqx">
+                                <frame key="frameInset" minX="38" minY="617" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="onLogout:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="Vro-6K-TUg"/>
+                                    <action selector="onTakePicture:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="HOo-nY-J4p"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAz-g8-nEO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xAz-g8-nEO">
                                 <frame key="frameInset" minX="67" minY="297" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -118,18 +119,20 @@
                                 <frame key="frameInset" minX="216" minY="617" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Take Photo"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="Fkw-7r-Rzf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-jg-Xqx">
-                                <frame key="frameInset" minX="38" minY="617" width="130" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgc-q2-Pv3">
+                                <frame key="frameInset" minX="267" minY="28" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Select Photo"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Logout"/>
                                 <connections>
-                                    <action selector="onTakePicture:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="HOo-nY-J4p"/>
+                                    <action selector="onLogout:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="Vro-6K-TUg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -137,7 +140,10 @@
                     </view>
                     <connections>
                         <outlet property="btnLogout" destination="dgc-q2-Pv3" id="DBr-eB-UGU"/>
+                        <outlet property="btnSelectPhoto" destination="YkC-jg-Xqx" id="gQI-JO-fnu"/>
+                        <outlet property="btnTakePhoto" destination="RIX-TP-vfX" id="cpg-l1-gGi"/>
                         <outlet property="imageView" destination="xAz-g8-nEO" id="l5E-a1-hWb"/>
+                        <outlet property="lblTitle" destination="mYU-Am-XDN" id="i0s-If-1vo"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="bij-9R-z8H"/>
                     </connections>
                 </viewController>
@@ -146,4 +152,7 @@
             <point key="canvasLocation" x="701.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CameraIcon" width="512" height="512"/>
+    </resources>
 </document>
