@@ -94,8 +94,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-Am-XDN">
-                                <frame key="frameInset" minX="166" minY="233" width="42" height="68"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-Am-XDN">
+                                <frame key="frameInset" minX="122" minY="233" width="130" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -110,11 +110,24 @@
                                     <action selector="onLogout:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="Vro-6K-TUg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-jg-Xqx">
-                                <frame key="frameInset" minX="122" minY="617" width="130" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAz-g8-nEO">
+                                <frame key="frameInset" minX="67" minY="297" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIX-TP-vfX">
+                                <frame key="frameInset" minX="216" minY="617" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Take Picture"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="Fkw-7r-Rzf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-jg-Xqx">
+                                <frame key="frameInset" minX="38" minY="617" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Select Photo"/>
                                 <connections>
                                     <action selector="onTakePicture:" destination="rWm-Vi-QrR" eventType="touchUpInside" id="HOo-nY-J4p"/>
                                 </connections>
@@ -124,6 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="btnLogout" destination="dgc-q2-Pv3" id="DBr-eB-UGU"/>
+                        <outlet property="imageView" destination="xAz-g8-nEO" id="l5E-a1-hWb"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="bij-9R-z8H"/>
                     </connections>
                 </viewController>
