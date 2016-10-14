@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370308A71DB082F800B1EC11 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370308A61DB082F800B1EC11 /* Post.swift */; };
+		370308A91DB0842200B1EC11 /* MakePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370308A81DB0842200B1EC11 /* MakePostViewController.swift */; };
 		3797174D1DADEAEE00910EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3797174C1DADEAEE00910EEF /* AppDelegate.swift */; };
 		3797174F1DADEAEE00910EEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3797174E1DADEAEE00910EEF /* HomeViewController.swift */; };
 		379717521DADEAEE00910EEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379717501DADEAEE00910EEF /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370308A61DB082F800B1EC11 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		370308A81DB0842200B1EC11 /* MakePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakePostViewController.swift; sourceTree = "<group>"; };
 		379717491DADEAEE00910EEF /* Parsetagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parsetagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3797174C1DADEAEE00910EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3797174E1DADEAEE00910EEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -75,10 +79,12 @@
 				3797174C1DADEAEE00910EEF /* AppDelegate.swift */,
 				3797174E1DADEAEE00910EEF /* HomeViewController.swift */,
 				379717501DADEAEE00910EEF /* Main.storyboard */,
+				370308A81DB0842200B1EC11 /* MakePostViewController.swift */,
 				37B2589E1DADEF7400B644D1 /* LoginViewController.swift */,
 				379717531DADEAEE00910EEF /* Assets.xcassets */,
 				379717551DADEAEE00910EEF /* LaunchScreen.storyboard */,
 				379717581DADEAEE00910EEF /* Info.plist */,
+				370308A61DB082F800B1EC11 /* Post.swift */,
 			);
 			path = Parsetagram;
 			sourceTree = "<group>";
@@ -215,8 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B2589F1DADEF7400B644D1 /* LoginViewController.swift in Sources */,
+				370308A91DB0842200B1EC11 /* MakePostViewController.swift in Sources */,
 				3797174F1DADEAEE00910EEF /* HomeViewController.swift in Sources */,
 				3797174D1DADEAEE00910EEF /* AppDelegate.swift in Sources */,
+				370308A71DB082F800B1EC11 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,9 @@ import UIKit
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     let btnFont = UIFont(name: "HelveticaNeue-UltraLight", size: 20)
     let vc = UIImagePickerController()
+    
+    var selectedImage: UIImage?
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
@@ -48,6 +51,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //present(vc, animated: true, completion: nil)
         self.present(vc, animated: true, completion: nil)
         
+        
     }
     
     @IBAction func takePhoto(_ sender: AnyObject) {
@@ -77,12 +81,15 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
-        print("WHY")
+   
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
+            self.selectedImage = pickedImage
         }
         dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "postSegue", sender: nil)
+       
     }
    
     
@@ -90,6 +97,17 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         print("cancel")
         dismiss(animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("preparing for segue")
+        let destination = segue.destination as! MakePostViewController
+        if segue.identifier == "postSegue" {
+            print(self.selectedImage)
+            destination.img = self.selectedImage
+            print("setting image")
+        }
+    }
+    
    
 }
 

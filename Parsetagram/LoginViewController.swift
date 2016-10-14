@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
             
         }
     }
-        @IBAction func onSignUp(_ sender: AnyObject) {
+    @IBAction func onSignUp(_ sender: AnyObject) {
         let newUser = PFUser()
         newUser.username = tfUsername.text
         newUser.password = tfPassword.text
