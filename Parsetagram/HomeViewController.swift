@@ -9,17 +9,19 @@
 import Parse
 import UIKit
 
-class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     let btnFont = UIFont(name: "HelveticaNeue-UltraLight", size: 20)
     let vc = UIImagePickerController()
+    var images : [PFObject] = []
     
+    @IBOutlet weak var tableView: UITableView!
     var selectedImage: UIImage?
-    
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnSelectPhoto: UIButton!
     @IBOutlet weak var btnTakePhoto: UIButton!
+    
+    
     @IBAction func onLogout(_ sender: AnyObject) {
         PFUser.logOutInBackground { (error) in
             // PFUser.currentUser() will now be nil
@@ -29,12 +31,17 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadImages()
+        
         vc.delegate = self;
+        self.tableView.dataSource = self
+        
+        
         btnLogout.titleLabel!.font = self.btnFont
         btnSelectPhoto.titleLabel!.font = self.btnFont
         btnTakePhoto.titleLabel!.font = self.btnFont
         lblTitle.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32)
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,8 +90,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
    
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = pickedImage
             self.selectedImage = pickedImage
         }
         dismiss(animated: true, completion: nil)
@@ -109,6 +114,47 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("setting image")
         }
     }
+    
+    func loadImages(){
+        let query = PFQuery(className: "Post")
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        // fetch data asynchronously
+        query.findObjectsInBackground { (posts, error) -> Void in
+            if let posts = posts {
+                self.images = posts
+                print(self.images)
+                self.tableView.reloadData()
+            } else {
+                // handle error
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as! PictureCell
+        print(indexPath.row)
+        //print(images)
+        let post = images[indexPath.row]
+        
+        let user = post["author"] as! PFUser
+        let author = user.username
+        let caption = post["caption"] as! String
+        let image = post["media"]
+        
+        cell.lblCaption.text = caption
+        cell.lblAuthor.text = author
+        
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return images.count
+    }
+
     
    
 }
