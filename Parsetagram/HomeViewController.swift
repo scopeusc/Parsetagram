@@ -88,7 +88,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.selectedImage = pickedImage
         }
         dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "postSegue", sender: nil)
+        self.performSegue(withIdentifier: "postSegue", sender: self)
        
     }
    
@@ -100,8 +100,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue")
-        let destination = segue.destination as! MakePostViewController
+       
+       
         if segue.identifier == "postSegue" {
+            let destination = segue.destination as! MakePostViewController
             print(self.selectedImage)
             destination.img = self.selectedImage
             print("setting image")

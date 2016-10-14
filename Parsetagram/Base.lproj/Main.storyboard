@@ -75,7 +75,7 @@
                         <outlet property="logo" destination="ep4-XU-fvN" id="Z3q-iP-msI"/>
                         <outlet property="tfPassword" destination="MKt-dy-LM0" id="9V3-Ht-YlL"/>
                         <outlet property="tfUsername" destination="6xr-eC-7o1" id="dcy-G3-QrR"/>
-                        <segue destination="rWm-Vi-QrR" kind="presentation" identifier="loginSegue" id="7Aa-5N-dcq"/>
+                        <segue destination="FH6-AR-x80" kind="presentation" identifier="loginSegue" id="7Aa-5N-dcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgc-q2-Pv3">
-                                <frame key="frameInset" minX="267" minY="28" width="92" height="30"/>
+                                <frame key="frameInset" minX="267" minY="86" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Logout"/>
@@ -130,7 +130,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-Am-XDN">
-                                <frame key="frameInset" minX="122" minY="69" width="130" height="68"/>
+                                <frame key="frameInset" minX="122" minY="141" width="130" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
@@ -139,6 +139,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zQU-gV-wAB"/>
                     <connections>
                         <outlet property="btnLogout" destination="dgc-q2-Pv3" id="DBr-eB-UGU"/>
                         <outlet property="btnSelectPhoto" destination="YkC-jg-Xqx" id="gQI-JO-fnu"/>
@@ -146,12 +147,12 @@
                         <outlet property="imageView" destination="xAz-g8-nEO" id="l5E-a1-hWb"/>
                         <outlet property="lblTitle" destination="mYU-Am-XDN" id="i0s-If-1vo"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="bij-9R-z8H"/>
-                        <segue destination="RR3-zI-rMH" kind="presentation" identifier="postSegue" id="aYs-7d-9UQ"/>
+                        <segue destination="RR3-zI-rMH" kind="show" identifier="postSegue" id="aYs-7d-9UQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMx-TC-u7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="701.60000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1640.8" y="36.431784107946029"/>
         </scene>
         <!--Make Post View Controller-->
         <scene sceneID="eoo-Wj-Z0x">
@@ -166,28 +167,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1o-cf-Ku2">
-                                <frame key="frameInset" minX="67" minY="39" width="240" height="71"/>
+                                <frame key="frameInset" minX="67" minY="84" width="240" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCl-Bi-OFw">
-                                <frame key="frameInset" minX="67" minY="140" width="240" height="21"/>
+                                <frame key="frameInset" minX="67" minY="163" width="240" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TpP-B5-le9">
-                                <frame key="frameInset" minX="67" minY="477" width="240" height="30"/>
+                                <frame key="frameInset" minX="67" minY="511" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iT-cL-kOu">
-                                <frame key="frameInset" minX="137" minY="548" width="101" height="30"/>
+                                <frame key="frameInset" minX="137" minY="575" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Post"/>
@@ -196,7 +197,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-xd-S3c">
-                                <frame key="frameInset" minX="62" minY="208" width="250" height="250"/>
+                                <frame key="frameInset" minX="62" minY="229" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -211,7 +212,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYS-zF-8Bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1717.5999999999999" y="53.523238380809602"/>
+            <point key="canvasLocation" x="2656.8000000000002" y="53.523238380809602"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fcT-NK-T2s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FH6-AR-x80" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="myJ-Mn-4Sz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rWm-Vi-QrR" kind="relationship" relationship="rootViewController" id="r0l-VV-JCg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBp-oU-euT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="701.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>
