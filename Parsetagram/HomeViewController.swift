@@ -142,9 +142,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let user = post["author"] as! PFUser
         let author = user.username
         let caption = post["caption"] as! String
-        let image = post["media"]
+        let imagePFFile = post["media"] as! PFFile
+        imagePFFile.getDataInBackground(block: {
+                (imageData, error) -> Void in
+                if (error == nil) {
+                    let image = UIImage(data:imageData!)
+                    cell.userImage.image = image
+                }
+        })
+        
         
         cell.lblCaption.text = caption
+  
         cell.lblAuthor.text = author
         
         

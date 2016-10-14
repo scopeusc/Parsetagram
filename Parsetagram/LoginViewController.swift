@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         logo.image = UIImage(named: "CameraIcon")
         btnLogin.titleLabel!.font = self.font
         btnSignUp.titleLabel!.font = self.font
-        lblTitle.font = UIFont(name: "Zapfino", size: 36)
+        lblTitle.font = UIFont(name: "HelveticaNeue-Light", size: 36)
         
         // Do any additional setup after loading the view.
     }
@@ -41,9 +41,7 @@ class LoginViewController: UIViewController {
             if user != nil {
                 print("successful login!")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                
             }
-            
         }
     }
     @IBAction func onSignUp(_ sender: AnyObject) {

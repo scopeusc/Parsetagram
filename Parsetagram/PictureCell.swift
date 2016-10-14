@@ -9,13 +9,17 @@
 import UIKit
 
 class PictureCell: UITableViewCell {
-
+    
     @IBOutlet weak var lblAuthor: UILabel!
     @IBOutlet weak var lblCaption: UILabel!
     
     @IBOutlet weak var userImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        lblAuthor.font = UIFont(name: "HelveticaNeue-UltraLight", size: 20)
+        lblCaption.font = UIFont(name: "HelveticaNeue-UltraLight", size: 20)
+        userImage.layer.cornerRadius = 8
+        userImage.clipsToBounds = true
         // Initialization code
     }
 
