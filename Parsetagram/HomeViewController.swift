@@ -42,6 +42,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         btnTakePhoto.titleLabel!.font = self.btnFont
         lblTitle.font = UIFont(name: "HelveticaNeue-UltraLight", size: 32)
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(refreshControl:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -164,6 +167,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return images.count
     }
 
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+    
+        loadImages()
+        print("refreshing images")
+        refreshControl.endRefreshing()
+        
+    }
     
    
 }
