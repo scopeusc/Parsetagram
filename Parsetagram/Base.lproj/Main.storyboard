@@ -126,7 +126,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="263"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rof-ah-i3d" id="f8s-k3-Ldz">
-                                            <frame key="frameInset" width="375" height="263"/>
+                                            <frame key="frameInset" width="375" height="262.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tZ-k7-JRc">
@@ -147,11 +147,19 @@
                                                     <frame key="frameInset" minX="100" minY="42" width="175" height="175"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSm-1R-OY9">
+                                                    <frame key="frameInset" minX="263" minY="16" width="104" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblAuthor" destination="3tZ-k7-JRc" id="Uay-AD-s6X"/>
                                             <outlet property="lblCaption" destination="1SH-lz-TDQ" id="21S-cN-RUm"/>
+                                            <outlet property="lblTimestamp" destination="sSm-1R-OY9" id="Mlc-l1-M7E"/>
                                             <outlet property="userImage" destination="cQ0-hk-ktr" id="IfG-XI-yph"/>
                                         </connections>
                                     </tableViewCell>

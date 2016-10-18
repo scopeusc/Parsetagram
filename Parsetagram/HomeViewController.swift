@@ -158,6 +158,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let author = user.username
         let caption = post["caption"] as! String
         let imagePFFile = post["media"] as! PFFile
+        let likes = post["likesCount"] as! NSNumber
+        
         imagePFFile.getDataInBackground(block: {
                 (imageData, error) -> Void in
                 if (error == nil) {
@@ -168,7 +170,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         cell.lblCaption.text = caption
-  
+        cell.lblTimestamp.text = "Likes: \(likes)"
         cell.lblAuthor.text = author
         
         
